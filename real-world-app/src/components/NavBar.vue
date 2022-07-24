@@ -3,15 +3,16 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/heyyy">{{ route }}</router-link>
+    <router-link :to="'/'+route">{{ route }}</router-link>
   </nav>
 </template>
 <!-- eslint-disable prettier/prettier -->
 <script>
 export default {
+  props:['route'],
   data: () => {
     return {
-      route: "hola",
+      
     };
   },
 };

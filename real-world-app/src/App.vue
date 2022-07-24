@@ -1,15 +1,30 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
+    <NavBar :route="route" />
+    <Form :route="route" @change-route="(r) => changeRoute(r)" />
     <router-view />
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import Form from "./components/NameForm.vue";
+
 export default {
   components: {
-    NavBar: NavBar,
+    NavBar,
+    Form,
+  },
+  data: () => {
+    return {
+      route: "World",
+    };
+  },
+  methods: {
+    changeRoute(r) {
+      console.log("happened");
+      this.route = r;
+    },
   },
 };
 </script>
