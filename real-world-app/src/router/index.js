@@ -19,9 +19,15 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  {
+    path: "*",
+    name: "404",
+    component: () => import("../views/NotFoundView.vue"),
+  },
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes,
 });
 
