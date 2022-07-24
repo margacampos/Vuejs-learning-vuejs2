@@ -17,4 +17,16 @@ export default {
 };
 </script>
 <!-- eslint-disable prettier/prettier -->
-<style></style>
+<style scoped>
+nav { 
+  background-color: black;
+  padding: 30px;
+}  
+nav a { 
+  color: white;
+  font-weight: bold; 
+}
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
